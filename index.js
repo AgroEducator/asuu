@@ -2,9 +2,11 @@ const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const { EditPhotoHandler } = require('./feature/edit_foto');
 const { ChatAIHandler } = require('./feature/chat_ai');
-const express = require('express');
-const app= express();
-const port = proces.env.PORT || 3000;
+const express = require("express");
+
+const app = express();
+
+const port = process.env.PORT || 3000;
 
 
 
@@ -41,6 +43,13 @@ client.on('message', async msg => {
     }
 
 });
+
+app.get("/", (req, res) => res.send("Hello world"));
+app.get("/ping", (req, res) => res.send("Pong"));
+app.get("/felix", (req, res) => res.send("Liawi"));
+
+app.listen(port, () => console.log(`Server is listening on port ${port}`));
+
 
 client.initialize();
 
