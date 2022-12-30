@@ -2,6 +2,9 @@ const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const { EditPhotoHandler } = require('./feature/edit_foto');
 const { ChatAIHandler } = require('./feature/chat_ai');
+const express = require('express');
+const app= express();
+const port = proces.env.PORT || 3000;
 
 
 
